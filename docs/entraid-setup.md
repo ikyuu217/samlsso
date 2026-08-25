@@ -26,7 +26,7 @@ samlsso(このリポジトリの SAML SP)を Entra ID と接続するための�
    | 応答 URL (Assertion Consumer Service URL) | `http://localhost:8080/saml/acs` | `SAML_SP_BASE_URL` + `/saml/acs`(既定のままなら左の値) |
 
    - 識別子はテナント内で一意であればよい。他アプリと衝突しない URI にする。
-   - 応答 URL は通常 HTTPS が必須だが、`localhost` に限り HTTP でも登録できる想定。**保存時にエラーになる場合はここで手順を止め、HTTPS 化(ngrok 等)の検討に切り替える**(spec の未確定事項)。
+   - 応答 URL は通常 HTTPS が必須だが、`localhost` に限り HTTP でも登録できる想定。**保存時にエラーになる場合はここで手順を止め、HTTPS 化(ngrok 等)の検討に切り替える**。
 3. 「**属性とクレーム**」は既定のままでよい。既定では NameID に `user.userprincipalname`、追加クレームとして `givenname` / `surname` / `emailaddress` / `name` が送られる。SP はここに含まれる属性をすべて表示する。
 4. 「**SAML 証明書**」セクションにある「**アプリのフェデレーション メタデータ URL**」をコピーする。形式は次のとおりで、これを SP の `SAML_IDP_METADATA_URL` に設定する。
 
